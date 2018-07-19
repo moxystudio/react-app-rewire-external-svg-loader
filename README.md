@@ -58,6 +58,7 @@ Available options:
 | loaderOptions | The options to pass to the loader | Object | `{ name: 'static/media/svg-sprite.[hash:8].svg' }` for production, `{ name: 'static/media/svg-sprite.svg' }` otherwise |
 | pluginOptions | The options to pass to the loader | Object | `{}` |
 
+If you modify `include` and `exclude`, it's advised to use `fs.realpathSync` so that it plays well with packages linked with `npm link`. Alternatively, you may disable [`resolve.symlinks`](https://webpack.js.org/configuration/resolve/#resolve-symlinks) in your webpack configuration.
 
 ### svgxuse
 
