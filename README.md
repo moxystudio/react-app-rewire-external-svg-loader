@@ -21,7 +21,9 @@ Adds [`external-svg-sprite-loader`](https://github.com/karify/external-svg-sprit
 
 ## Installation
 
-`$ npm install --save-dev eslint react-app-rewire-external-svg-loader`
+```sh
+$ npm install --save-dev react-app-rewire-external-svg-loader
+```
 
 
 ## Usage
@@ -74,8 +76,10 @@ import('svgxuse').catch(() => {});
 
 ## Tests
 
-`$ npm test`   
-`$ npm test -- --watch` during development
+```sh
+$ npm test
+$ npm test -- --watch # during development
+```
 
 
 ## License
