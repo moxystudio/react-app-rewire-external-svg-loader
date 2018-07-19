@@ -1,0 +1,691 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should modify the webpack config correctly for development 1`] = `
+Object {
+  "module": Object {
+    "rules": Array [
+      Object {
+        "enforce": "pre",
+        "include": "path/to/src",
+        "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "path/to/eslint-loader/index.js",
+            "options": Object {},
+          },
+        ],
+      },
+      Object {
+        "oneOf": Array [
+          Object {
+            "loader": "path/to/url-loader/index.js",
+            "options": Object {},
+            "test": Array [
+              /\\\\\\.bmp\\$/,
+              /\\\\\\.gif\\$/,
+              /\\\\\\.jpe\\?g\\$/,
+              /\\\\\\.png\\$/,
+            ],
+          },
+          Object {
+            "include": "path/to/src",
+            "loader": "path/to/babel-loader/lib/index.js",
+            "options": Object {},
+            "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+          },
+          Object {
+            "test": /\\\\\\.css\\$/,
+            "use": Array [
+              "path/to/style-loader/index.js",
+              Object {
+                "loader": "path/to/css-loader/index.js",
+                "options": Object {
+                  "importLoaders": 1,
+                },
+              },
+              Object {
+                "loader": "path/to/postcss-loader/lib/index.js",
+                "options": Object {},
+              },
+            ],
+          },
+          Object {
+            "exclude": undefined,
+            "include": "<PROJECT_ROOT>/src",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "static/media/svg-sprite.svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": Array [
+              /\\\\\\.js\\$/,
+              /\\\\\\.html\\$/,
+              /\\\\\\.json\\$/,
+            ],
+            "loader": "path/to/file-loader/dist/cjs.js",
+            "options": Object {
+              "name": "static/media/[name].[hash:8].[ext]",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "plugins": Array [
+    SvgStorePlugin {
+      Symbol(): true,
+      Symbol(): Object {},
+    },
+  ],
+}
+`;
+
+exports[`should modify the webpack config correctly for production 1`] = `
+Object {
+  "module": Object {
+    "rules": Array [
+      Object {
+        "enforce": "pre",
+        "include": "path/to/src",
+        "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "path/to/eslint-loader/index.js",
+            "options": Object {},
+          },
+        ],
+      },
+      Object {
+        "oneOf": Array [
+          Object {
+            "loader": "path/to/url-loader/index.js",
+            "options": Object {},
+            "test": Array [
+              /\\\\\\.bmp\\$/,
+              /\\\\\\.gif\\$/,
+              /\\\\\\.jpe\\?g\\$/,
+              /\\\\\\.png\\$/,
+            ],
+          },
+          Object {
+            "include": "path/to/src",
+            "loader": "path/to/babel-loader/lib/index.js",
+            "options": Object {},
+            "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+          },
+          Object {
+            "test": /\\\\\\.css\\$/,
+            "use": Array [
+              "path/to/style-loader/index.js",
+              Object {
+                "loader": "path/to/css-loader/index.js",
+                "options": Object {
+                  "importLoaders": 1,
+                },
+              },
+              Object {
+                "loader": "path/to/postcss-loader/lib/index.js",
+                "options": Object {},
+              },
+            ],
+          },
+          Object {
+            "exclude": undefined,
+            "include": "<PROJECT_ROOT>/src",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "static/media/svg-sprite.svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": undefined,
+            "include": "<PROJECT_ROOT>/src",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "static/media/svg-sprite.[hash:8].svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": Array [
+              /\\\\\\.js\\$/,
+              /\\\\\\.html\\$/,
+              /\\\\\\.json\\$/,
+            ],
+            "loader": "path/to/file-loader/dist/cjs.js",
+            "options": Object {
+              "name": "static/media/[name].[hash:8].[ext]",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "plugins": Array [
+    SvgStorePlugin {
+      Symbol(): true,
+      Symbol(): Object {},
+    },
+    SvgStorePlugin {
+      Symbol(): true,
+      Symbol(): Object {},
+    },
+  ],
+}
+`;
+
+exports[`should override the default include / exclude 1`] = `
+Object {
+  "module": Object {
+    "rules": Array [
+      Object {
+        "enforce": "pre",
+        "include": "path/to/src",
+        "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "path/to/eslint-loader/index.js",
+            "options": Object {},
+          },
+        ],
+      },
+      Object {
+        "oneOf": Array [
+          Object {
+            "loader": "path/to/url-loader/index.js",
+            "options": Object {},
+            "test": Array [
+              /\\\\\\.bmp\\$/,
+              /\\\\\\.gif\\$/,
+              /\\\\\\.jpe\\?g\\$/,
+              /\\\\\\.png\\$/,
+            ],
+          },
+          Object {
+            "include": "path/to/src",
+            "loader": "path/to/babel-loader/lib/index.js",
+            "options": Object {},
+            "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+          },
+          Object {
+            "test": /\\\\\\.css\\$/,
+            "use": Array [
+              "path/to/style-loader/index.js",
+              Object {
+                "loader": "path/to/css-loader/index.js",
+                "options": Object {
+                  "importLoaders": 1,
+                },
+              },
+              Object {
+                "loader": "path/to/postcss-loader/lib/index.js",
+                "options": Object {},
+              },
+            ],
+          },
+          Object {
+            "exclude": undefined,
+            "include": "<PROJECT_ROOT>/src",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "static/media/svg-sprite.svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": undefined,
+            "include": "<PROJECT_ROOT>/src",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "static/media/svg-sprite.[hash:8].svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": "bar",
+            "include": "foo",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "static/media/svg-sprite.svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": Array [
+              /\\\\\\.js\\$/,
+              /\\\\\\.html\\$/,
+              /\\\\\\.json\\$/,
+            ],
+            "loader": "path/to/file-loader/dist/cjs.js",
+            "options": Object {
+              "name": "static/media/[name].[hash:8].[ext]",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "plugins": Array [
+    SvgStorePlugin {
+      Symbol(): true,
+      Symbol(): Object {},
+    },
+    SvgStorePlugin {
+      Symbol(): true,
+      Symbol(): Object {},
+    },
+    SvgStorePlugin {
+      Symbol(): true,
+      Symbol(): Object {},
+    },
+  ],
+}
+`;
+
+exports[`should pass options to the loader 1`] = `
+Object {
+  "module": Object {
+    "rules": Array [
+      Object {
+        "enforce": "pre",
+        "include": "path/to/src",
+        "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "path/to/eslint-loader/index.js",
+            "options": Object {},
+          },
+        ],
+      },
+      Object {
+        "oneOf": Array [
+          Object {
+            "loader": "path/to/url-loader/index.js",
+            "options": Object {},
+            "test": Array [
+              /\\\\\\.bmp\\$/,
+              /\\\\\\.gif\\$/,
+              /\\\\\\.jpe\\?g\\$/,
+              /\\\\\\.png\\$/,
+            ],
+          },
+          Object {
+            "include": "path/to/src",
+            "loader": "path/to/babel-loader/lib/index.js",
+            "options": Object {},
+            "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+          },
+          Object {
+            "test": /\\\\\\.css\\$/,
+            "use": Array [
+              "path/to/style-loader/index.js",
+              Object {
+                "loader": "path/to/css-loader/index.js",
+                "options": Object {
+                  "importLoaders": 1,
+                },
+              },
+              Object {
+                "loader": "path/to/postcss-loader/lib/index.js",
+                "options": Object {},
+              },
+            ],
+          },
+          Object {
+            "exclude": undefined,
+            "include": "<PROJECT_ROOT>/src",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "static/media/svg-sprite.svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": undefined,
+            "include": "<PROJECT_ROOT>/src",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "static/media/svg-sprite.[hash:8].svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": "bar",
+            "include": "foo",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "static/media/svg-sprite.svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": undefined,
+            "include": "<PROJECT_ROOT>/src",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "foo.svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": Array [
+              /\\\\\\.js\\$/,
+              /\\\\\\.html\\$/,
+              /\\\\\\.json\\$/,
+            ],
+            "loader": "path/to/file-loader/dist/cjs.js",
+            "options": Object {
+              "name": "static/media/[name].[hash:8].[ext]",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "plugins": Array [
+    SvgStorePlugin {
+      Symbol(): true,
+      Symbol(): Object {},
+    },
+    SvgStorePlugin {
+      Symbol(): true,
+      Symbol(): Object {},
+    },
+    SvgStorePlugin {
+      Symbol(): true,
+      Symbol(): Object {},
+    },
+    SvgStorePlugin {
+      Symbol(): true,
+      Symbol(): Object {},
+    },
+  ],
+}
+`;
+
+exports[`should pass options to the plugin 1`] = `
+Object {
+  "module": Object {
+    "rules": Array [
+      Object {
+        "enforce": "pre",
+        "include": "path/to/src",
+        "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "path/to/eslint-loader/index.js",
+            "options": Object {},
+          },
+        ],
+      },
+      Object {
+        "oneOf": Array [
+          Object {
+            "loader": "path/to/url-loader/index.js",
+            "options": Object {},
+            "test": Array [
+              /\\\\\\.bmp\\$/,
+              /\\\\\\.gif\\$/,
+              /\\\\\\.jpe\\?g\\$/,
+              /\\\\\\.png\\$/,
+            ],
+          },
+          Object {
+            "include": "path/to/src",
+            "loader": "path/to/babel-loader/lib/index.js",
+            "options": Object {},
+            "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+          },
+          Object {
+            "test": /\\\\\\.css\\$/,
+            "use": Array [
+              "path/to/style-loader/index.js",
+              Object {
+                "loader": "path/to/css-loader/index.js",
+                "options": Object {
+                  "importLoaders": 1,
+                },
+              },
+              Object {
+                "loader": "path/to/postcss-loader/lib/index.js",
+                "options": Object {},
+              },
+            ],
+          },
+          Object {
+            "exclude": undefined,
+            "include": "<PROJECT_ROOT>/src",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "static/media/svg-sprite.svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": undefined,
+            "include": "<PROJECT_ROOT>/src",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "static/media/svg-sprite.[hash:8].svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": "bar",
+            "include": "foo",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "static/media/svg-sprite.svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": undefined,
+            "include": "<PROJECT_ROOT>/src",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "foo.svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": undefined,
+            "include": "<PROJECT_ROOT>/src",
+            "test": /\\\\\\.svg\\$/,
+            "use": Array [
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
+                "options": Object {
+                  "name": "static/media/svg-sprite.svg",
+                },
+              },
+              Object {
+                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
+                "options": Object {
+                  "transformId": true,
+                },
+              },
+            ],
+          },
+          Object {
+            "exclude": Array [
+              /\\\\\\.js\\$/,
+              /\\\\\\.html\\$/,
+              /\\\\\\.json\\$/,
+            ],
+            "loader": "path/to/file-loader/dist/cjs.js",
+            "options": Object {
+              "name": "static/media/[name].[hash:8].[ext]",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "plugins": Array [
+    SvgStorePlugin {
+      Symbol(): true,
+      Symbol(): Object {},
+    },
+    SvgStorePlugin {
+      Symbol(): true,
+      Symbol(): Object {},
+    },
+    SvgStorePlugin {
+      Symbol(): true,
+      Symbol(): Object {},
+    },
+    SvgStorePlugin {
+      Symbol(): true,
+      Symbol(): Object {},
+    },
+    SvgStorePlugin {
+      Symbol(): false,
+      Symbol(): Object {},
+    },
+  ],
+}
+`;

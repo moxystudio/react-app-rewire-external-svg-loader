@@ -1,0 +1,63 @@
+{
+  "name": "react-app-rewire-external-svg-loader",
+  "description": "Enables external-svg-loader for CRA apps using react-app-rewired",
+  "version": "0.0.0",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "svg",
+    "loader",
+    "external-svg-loader"
+  ],
+  "author": "André Cruz <andre@moxy.studio>",
+  "homepage": "https://github.com/moxystudio/react-app-rewire-external-svg-loader",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:moxystudio/react-app-rewire-external-svg-loader.git"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --env node --coverage",
+    "prerelease": "npm t && npm run lint",
+    "release": "standard-version",
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -e $GIT_PARAMS"
+  },
+  "standard-version": {
+    "scripts": {
+      "posttag": "git push --follow-tags origin master && npm publish"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix --ignore-pattern test/fixtures",
+      "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "dependencies": {
+    "external-svg-sprite-loader": "^3.4.1",
+    "lodash.merge": "^4.6.1",
+    "svg-css-modules-loader": "^1.6.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-moxy": "^5.4.1",
+    "husky": "^0.14.0",
+    "jest": "^23.4.1",
+    "jest-serializer-path": "^0.1.15",
+    "lint-staged": "^7.2.0",
+    "standard-version": "^4.4.0",
+    "webpack": "^3.12.0"
+  }
+}
