@@ -16,7 +16,7 @@
 [greenkeeper-image]:https://badges.greenkeeper.io/moxystudio/react-app-rewire-external-svg-loader.svg
 [greenkeeper-url]:https://greenkeeper.io
 
-Adds [`external-svg-sprite-loader`](https://github.com/karify/external-svg-sprite-loader) CRA apps, using [`react-app-rewired`](https://github.com/timarney/react-app-rewired).
+Adds [`external-svg-sprite-loader`](https://github.com/karify/external-svg-sprite-loader) for CRA apps, using [`react-app-rewired`](https://github.com/timarney/react-app-rewired).
 
 
 ## Installation
