@@ -149,25 +149,6 @@ Object {
               Object {
                 "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
                 "options": Object {
-                  "name": "static/media/svg-sprite.svg",
-                },
-              },
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
-                "options": Object {
-                  "transformId": true,
-                },
-              },
-            ],
-          },
-          Object {
-            "exclude": undefined,
-            "include": "<PROJECT_ROOT>/src",
-            "test": /\\\\\\.svg\\$/,
-            "use": Array [
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
-                "options": Object {
                   "name": "static/media/svg-sprite.[hash:8].svg",
                 },
               },
@@ -199,15 +180,11 @@ Object {
       Symbol(): true,
       Symbol(): Object {},
     },
-    SvgStorePlugin {
-      Symbol(): true,
-      Symbol(): Object {},
-    },
   ],
 }
 `;
 
-exports[`should override the default include / exclude 1`] = `
+exports[`should override the default test / include / exclude 1`] = `
 Object {
   "module": Object {
     "rules": Array [
@@ -257,47 +234,9 @@ Object {
             ],
           },
           Object {
-            "exclude": undefined,
-            "include": "<PROJECT_ROOT>/src",
-            "test": /\\\\\\.svg\\$/,
-            "use": Array [
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
-                "options": Object {
-                  "name": "static/media/svg-sprite.svg",
-                },
-              },
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
-                "options": Object {
-                  "transformId": true,
-                },
-              },
-            ],
-          },
-          Object {
-            "exclude": undefined,
-            "include": "<PROJECT_ROOT>/src",
-            "test": /\\\\\\.svg\\$/,
-            "use": Array [
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
-                "options": Object {
-                  "name": "static/media/svg-sprite.[hash:8].svg",
-                },
-              },
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
-                "options": Object {
-                  "transformId": true,
-                },
-              },
-            ],
-          },
-          Object {
             "exclude": "bar",
             "include": "foo",
-            "test": /\\\\\\.svg\\$/,
+            "test": "svg",
             "use": Array [
               Object {
                 "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
@@ -329,14 +268,6 @@ Object {
     ],
   },
   "plugins": Array [
-    SvgStorePlugin {
-      Symbol(): true,
-      Symbol(): Object {},
-    },
-    SvgStorePlugin {
-      Symbol(): true,
-      Symbol(): Object {},
-    },
     SvgStorePlugin {
       Symbol(): true,
       Symbol(): Object {},
@@ -402,63 +333,6 @@ Object {
               Object {
                 "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
                 "options": Object {
-                  "name": "static/media/svg-sprite.svg",
-                },
-              },
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
-                "options": Object {
-                  "transformId": true,
-                },
-              },
-            ],
-          },
-          Object {
-            "exclude": undefined,
-            "include": "<PROJECT_ROOT>/src",
-            "test": /\\\\\\.svg\\$/,
-            "use": Array [
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
-                "options": Object {
-                  "name": "static/media/svg-sprite.[hash:8].svg",
-                },
-              },
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
-                "options": Object {
-                  "transformId": true,
-                },
-              },
-            ],
-          },
-          Object {
-            "exclude": "bar",
-            "include": "foo",
-            "test": /\\\\\\.svg\\$/,
-            "use": Array [
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
-                "options": Object {
-                  "name": "static/media/svg-sprite.svg",
-                },
-              },
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
-                "options": Object {
-                  "transformId": true,
-                },
-              },
-            ],
-          },
-          Object {
-            "exclude": undefined,
-            "include": "<PROJECT_ROOT>/src",
-            "test": /\\\\\\.svg\\$/,
-            "use": Array [
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
-                "options": Object {
                   "name": "foo.svg",
                 },
               },
@@ -486,18 +360,6 @@ Object {
     ],
   },
   "plugins": Array [
-    SvgStorePlugin {
-      Symbol(): true,
-      Symbol(): Object {},
-    },
-    SvgStorePlugin {
-      Symbol(): true,
-      Symbol(): Object {},
-    },
-    SvgStorePlugin {
-      Symbol(): true,
-      Symbol(): Object {},
-    },
     SvgStorePlugin {
       Symbol(): true,
       Symbol(): Object {},
@@ -575,82 +437,6 @@ Object {
             ],
           },
           Object {
-            "exclude": undefined,
-            "include": "<PROJECT_ROOT>/src",
-            "test": /\\\\\\.svg\\$/,
-            "use": Array [
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
-                "options": Object {
-                  "name": "static/media/svg-sprite.[hash:8].svg",
-                },
-              },
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
-                "options": Object {
-                  "transformId": true,
-                },
-              },
-            ],
-          },
-          Object {
-            "exclude": "bar",
-            "include": "foo",
-            "test": /\\\\\\.svg\\$/,
-            "use": Array [
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
-                "options": Object {
-                  "name": "static/media/svg-sprite.svg",
-                },
-              },
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
-                "options": Object {
-                  "transformId": true,
-                },
-              },
-            ],
-          },
-          Object {
-            "exclude": undefined,
-            "include": "<PROJECT_ROOT>/src",
-            "test": /\\\\\\.svg\\$/,
-            "use": Array [
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
-                "options": Object {
-                  "name": "foo.svg",
-                },
-              },
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
-                "options": Object {
-                  "transformId": true,
-                },
-              },
-            ],
-          },
-          Object {
-            "exclude": undefined,
-            "include": "<PROJECT_ROOT>/src",
-            "test": /\\\\\\.svg\\$/,
-            "use": Array [
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/external-svg-sprite-loader/index.js",
-                "options": Object {
-                  "name": "static/media/svg-sprite.svg",
-                },
-              },
-              Object {
-                "loader": "<PROJECT_ROOT>/node_modules/svg-css-modules-loader/src/svg-css-modules-loader.js",
-                "options": Object {
-                  "transformId": true,
-                },
-              },
-            ],
-          },
-          Object {
             "exclude": Array [
               /\\\\\\.js\\$/,
               /\\\\\\.html\\$/,
@@ -666,22 +452,6 @@ Object {
     ],
   },
   "plugins": Array [
-    SvgStorePlugin {
-      Symbol(): true,
-      Symbol(): Object {},
-    },
-    SvgStorePlugin {
-      Symbol(): true,
-      Symbol(): Object {},
-    },
-    SvgStorePlugin {
-      Symbol(): true,
-      Symbol(): Object {},
-    },
-    SvgStorePlugin {
-      Symbol(): true,
-      Symbol(): Object {},
-    },
     SvgStorePlugin {
       Symbol(): false,
       Symbol(): Object {},

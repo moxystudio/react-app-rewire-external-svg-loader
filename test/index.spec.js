@@ -1,6 +1,7 @@
 'use strict';
 
 const serializerPath = require('jest-serializer-path');
+const cloneDeep = require('lodash.clonedeep');
 const rewireExternalSvgLoader = require('..');
 
 expect.addSnapshotSerializer(serializerPath);
@@ -56,19 +57,20 @@ const mockConfig = {
 };
 
 it('should modify the webpack config correctly for development', () => {
-    const result = rewireExternalSvgLoader(mockConfig, 'development');
+    const result = rewireExternalSvgLoader(cloneDeep(mockConfig), 'development');
 
     expect(result).toMatchSnapshot();
 });
 
 it('should modify the webpack config correctly for production', () => {
-    const result = rewireExternalSvgLoader(mockConfig, 'production');
+    const result = rewireExternalSvgLoader(cloneDeep(mockConfig), 'production');
 
     expect(result).toMatchSnapshot();
 });
 
-it('should override the default include / exclude', () => {
-    const result = rewireExternalSvgLoader(mockConfig, 'development', {
+it('should override the default test / include / exclude', () => {
+    const result = rewireExternalSvgLoader(cloneDeep(mockConfig), 'development', {
+        test: 'svg',
         include: 'foo',
         exclude: 'bar',
     });
@@ -77,7 +79,7 @@ it('should override the default include / exclude', () => {
 });
 
 it('should pass options to the loader', () => {
-    const result = rewireExternalSvgLoader(mockConfig, 'development', {
+    const result = rewireExternalSvgLoader(cloneDeep(mockConfig), 'development', {
         loaderOptions: { name: 'foo.svg' },
     });
 
@@ -85,7 +87,7 @@ it('should pass options to the loader', () => {
 });
 
 it('should pass options to the plugin', () => {
-    const result = rewireExternalSvgLoader(mockConfig, 'development', {
+    const result = rewireExternalSvgLoader(cloneDeep(mockConfig), 'development', {
         pluginOptions: { emit: false },
     });
 
@@ -93,9 +95,9 @@ it('should pass options to the plugin', () => {
 });
 
 it('should allow usage with compose', () => {
-    expect(rewireExternalSvgLoader(mockConfig, 'development'))
-    .toEqual(rewireExternalSvgLoader()(mockConfig, 'development'));
+    expect(rewireExternalSvgLoader(cloneDeep(mockConfig), 'development'))
+    .toEqual(rewireExternalSvgLoader()(cloneDeep(mockConfig), 'development'));
 
-    expect(rewireExternalSvgLoader(mockConfig, 'development', { include: 'foo' }))
-    .toEqual(rewireExternalSvgLoader({ include: 'foo' })(mockConfig, 'development'));
+    expect(rewireExternalSvgLoader(cloneDeep(mockConfig), 'development', { include: 'foo' }))
+    .toEqual(rewireExternalSvgLoader({ include: 'foo' })(cloneDeep(mockConfig), 'development'));
 });
