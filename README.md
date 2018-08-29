@@ -55,6 +55,7 @@ Available options:
 
 | Name   | Description   | Type     | Default |
 | ------ | ------------- | -------- | ------- |
+| test | The loader test pattern | string/RegExp | `/\.svg$/` |
 | include | The loader include condition | string/Array/RegExp/Function | *src folder* |
 | exclude | The loader exclude condition | string/Array/RegExp/Function | |
 | loaderOptions | The options to pass to the loader | Object | `{ name: 'static/media/svg-sprite.[hash:8].svg' }` for production, `{ name: 'static/media/svg-sprite.svg' }` otherwise |

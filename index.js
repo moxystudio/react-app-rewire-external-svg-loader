@@ -27,6 +27,7 @@ const fileLoaderRuleMatcher = (rule) => rule.loader && rule.loader.indexOf(`${pa
 
 const createRewire = (options) => (config, env) => {
     options = merge({
+        test: /\.svg$/,
         include: path.resolve('src'),
         exclude: undefined,
         loaderOptions: {
@@ -37,7 +38,7 @@ const createRewire = (options) => (config, env) => {
 
     // Add loader
     const rule = {
-        test: /\.svg$/,
+        test: options.test,
         include: options.include,
         exclude: options.exclude,
         use: [
