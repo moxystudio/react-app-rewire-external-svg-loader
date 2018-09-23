@@ -16,6 +16,7 @@
     "url": "git@github.com:moxystudio/react-app-rewire-external-svg-loader.git"
   },
   "license": "MIT",
+  "main": "index.js",
   "files": [
     "index.js"
   ],
